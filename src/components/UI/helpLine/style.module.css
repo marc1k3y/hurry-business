@@ -1,0 +1,30 @@
+.helpLineWrapper {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 50px;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  color: goldenrod;
+  background-color: rgb(240, 230, 150);
+  padding: 10px 0;
+  font-size: 1.1rem;
+  z-index: 100;
+}
+
+.icoBlock, .messageBlock {
+  background-color: transparent;
+}
+
+.icoBlock img {
+  width: 40px;
+  background-color: transparent;
+}
+
+.messageBlock a {
+  font-weight: bold;
+  color: goldenrod;
+  background-color: transparent;
+}

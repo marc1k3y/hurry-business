@@ -1,0 +1,21 @@
+.footerWrapper {
+  margin-top: auto;
+  height: 40px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+  z-index: 900;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footerWrapper a {
+  color: goldenrod;
+}

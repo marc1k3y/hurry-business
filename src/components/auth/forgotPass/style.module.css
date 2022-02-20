@@ -1,0 +1,58 @@
+.forgotWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.forgotWw {
+  background-color: white;
+  padding: 20px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 3px 3px 25px rgba(44, 98, 156, 0.20);
+}
+
+.forgotWw>h2 {
+  font-size: 28px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: goldenrod;
+}
+
+.forgotLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forgotLabel>input {
+  margin-top: 2px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid gray;
+}
+
+.forgotLabel>button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #24a0ed;
+  border-radius: 35px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.forgotLabel>button:disabled {
+  background-color: lightgray;
+  color: gray;
+  cursor: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .forgotLabel>button {
+    cursor: none;
+  }
+}

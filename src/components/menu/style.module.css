@@ -1,0 +1,124 @@
+.menuWrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menuCreate {
+  background-color: white;
+  box-shadow: 3px 3px 25px rgba(44, 98, 156, 0.20);
+  padding: 20px 30px;
+  border-radius: 25px;
+}
+
+.menuCreate:hover {
+  box-shadow: 0px 0px 35px gold;
+}
+
+.menuCreate>h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.menuCreate>form {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuCreate>form input {
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: 2px solid gray;
+}
+
+.optionInput {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.optionInput>select {
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.priceInput {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.priceInput>input, .optionInput>input {
+  width: 35%;
+}
+
+.priceInput>div {
+  font-size: 20px;
+}
+
+.menuCreate>form>button {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: goldenrod;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.menuCreate>form>button:disabled {
+  background-color: lightgray;
+  color: gray;
+  cursor: auto;
+}
+
+.menuPositions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 10px;
+}
+
+.menuPosition {
+  box-shadow: 1px 1px 5px rgba(44, 98, 156, 0.20);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 5px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100px;
+}
+
+.menuPosition>button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menuPosition>button img {
+  width: 10px;
+}
+
+.posTitle {
+  margin-top: 5px;
+  border-top: 1px solid gray;
+}
+
+@media screen and (max-width: 768px) {
+  .menuCreate>form>button, .menuPosition>button {
+    cursor: none;
+  }
+}

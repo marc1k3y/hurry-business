@@ -1,0 +1,1 @@
+export const host = "https://hurry-network.herokuapp.com/api/"

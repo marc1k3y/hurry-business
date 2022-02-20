@@ -1,0 +1,41 @@
+.modalWrapper {
+  position: fixed;
+  flex-direction: column;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: goldenrod;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.modalHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.modalHeader>button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modalHeader>button img {
+  width: 25px;
+}
+
+.modalContet {
+  text-align: start;
+  padding: 5px 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  min-width: 300px;
+  min-height: 100px;
+}

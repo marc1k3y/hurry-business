@@ -1,0 +1,30 @@
+.greenLineWrapper {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 50px;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  color: green;
+  background-color: rgb(100, 225, 150);
+  padding: 10px 0;
+  font-size: 1.1rem;
+  z-index: 200;
+}
+
+.icoBlock, .messageBlock {
+  background-color: transparent;
+}
+
+.icoBlock img {
+  width: 40px;
+  background-color: transparent;
+}
+
+.messageBlock a {
+  font-weight: bold;
+  color: goldenrod;
+  background-color: transparent;
+}

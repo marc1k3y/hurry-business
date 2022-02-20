@@ -1,0 +1,99 @@
+.authWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.authWw {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 25px;
+  box-shadow: 3px 3px 25px rgba(44, 98, 156, 0.20);
+}
+
+.authWw>h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: goldenrod;
+}
+
+.authLabels {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.authLabels input {
+  margin-top: 2px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 25px;
+  border: 2px solid gray;
+}
+
+.authLabels>div {
+  display: flex;
+}
+
+.authLabels>div>input {
+  padding: 10px 30px 10px 10px;
+}
+
+.authLabels img {
+  width: 20px;
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+.privacyPolicy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.authBtns {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.authBtns>button {
+  margin-top: 10px;
+  padding: 10px 35px;
+  background-color: #24a0ed;
+  color: white;
+  border-radius: 35px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.authBtns>button:disabled {
+  background-color: lightgray;
+  color: gray;
+  cursor: auto;
+}
+
+.authBtns>div {
+  margin-top: 20px;
+  text-decoration: underline;
+  color: gray;
+  cursor: pointer;
+}
+
+.authBtns>a {
+  color: gray;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .authBtns>button, .authBtns>div, .authBtns>a, .privacyPolicy div, .authLabels img {
+    cursor: none;
+  }
+}
