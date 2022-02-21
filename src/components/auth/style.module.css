@@ -14,6 +14,11 @@
   box-shadow: 3px 3px 25px rgba(44, 98, 156, 0.20);
 }
 
+.authWw>img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
 .authWw>h2 {
   margin-bottom: 25px;
   font-size: 28px;

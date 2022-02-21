@@ -5,6 +5,7 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import eyeShow from "../../assets/eye-show.svg"
 import eyeHide from "../../assets/eye-hide.svg"
+import enterPic from "../../assets/enter-bus.svg"
 import { host } from "../../constants"
 import { authSuccessAction } from "../../store/auth/actions"
 import { HelpLine } from "../UI/helpLine"
@@ -74,6 +75,7 @@ export const Auth = () => {
     <div className={cn.authWrapper}>
       <form onSubmit={(e) => auth(e)}>
         <div className={cn.authWw}>
+          <img src={enterPic} alt="enter" />
           <h2>{t?.auth.windowTitle}</h2>
           <div className={cn.authLabels}>{t?.auth.loginLabel}
             <input
