@@ -40,7 +40,11 @@ const en = {
     copiedText: "copied! Send this code to ",
     botLink: "bot",
     genText: "Connect with Telegram",
-    genBtn: "generate"
+    genBtn: "generate",
+    changePass: "Change password",
+    newPassPlc: "new password",
+    repPassPlc: "repeat password",
+    changeBtn: "change"
   }
 }
 
@@ -84,7 +88,11 @@ const ru = {
     copiedText: "Скопировано! Отправьте этот код ",
     botLink: "боту",
     genText: "Связать с Телеграм",
-    genBtn: "сгенерировать"
+    genBtn: "сгенерировать",
+    changePass: "Сменить пароль",
+    newPassPlc: "новый пароль",
+    repPassPlc: "повторить пароль",
+    changeBtn: "сменить"
   }
 }
 
