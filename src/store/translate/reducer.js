@@ -6,8 +6,8 @@ const en = {
     loginLabel: "Enter login",
     passLabel: "Enter password",
     privacyPlc: "privacy policy",
-    loginBtn: "Login",
-    regBtn: "Register",
+    loginBtn: "Sign in",
+    regBtn: "Sign up",
     idha: "I don't have account",
     iha: "I have account",
     forgotPass: "forgot password"
