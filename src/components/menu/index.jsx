@@ -1,5 +1,6 @@
 import cn from "./style.module.css"
 import axios from "axios"
+import { nanoid } from "nanoid"
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
@@ -50,6 +51,7 @@ export const Menu = () => {
     setMenuAction(true)
     await axios.put(`${host}bus/menu?bid=${bid}`, {
       pos: {
+        id: nanoid(4),
         title: posTitle,
         option: posOption + option,
         price: posPrice + currencySymbol(currency)
@@ -130,7 +132,7 @@ export const Menu = () => {
       <div className={cn.menuPositions}>
         {menu.length > 0 && menu.map((pos, index) =>
           <div key={index} className={cn.menuPosition}>
-            <button onClick={(e) => popPos(e, pos.title)}>
+            <button onClick={(e) => popPos(e, pos.id)}>
               <img src={deleteIco} alt="delete" />
             </button>
             <div className={cn.posTitle}>{pos.title}</div>
