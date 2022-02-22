@@ -8,6 +8,7 @@
   background-color: gray;
   padding: 20px;
   border-radius: 20px;
+  border: 2px solid black;
 }
 
 .modalHeader {
@@ -21,6 +22,14 @@
   font-weight: bold;
 }
 
+.modalHeader>p {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
 .modalHeader>button {
   display: flex;
   background-color: transparent;
@@ -29,6 +38,7 @@
   background-color: goldenrod;
   padding: 5px;
   border-radius: 10px;
+  border: 2px solid black;
 }
 
 .modalHeader>button img {
@@ -38,7 +48,7 @@
 .modalContet {
   text-align: start;
   padding: 5px 10px;
-  border: 2px solid white;
+  border: 2px solid black;
   border-radius: 10px;
   min-width: 300px;
   min-height: 100px;

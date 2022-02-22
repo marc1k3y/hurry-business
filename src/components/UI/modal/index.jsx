@@ -5,7 +5,7 @@ export const Modal = ({ visible, onClose, children, header = "info" }) => {
   return (
     <div className={cn.modalWrapper} style={{ display: visible ? "flex" : "none" }}>
       <div className={cn.modalHeader}>
-        {header}
+        <p>{header}</p>
         <button onClick={() => onClose(false)}>
           <img src={close} alt="close" />
         </button>
