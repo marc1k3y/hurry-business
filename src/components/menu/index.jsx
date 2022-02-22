@@ -74,7 +74,7 @@ export const Menu = () => {
         .then((res) => {
           if (!res.data.title || !res.data.addr) {
             dispatch(showHelpLineAction("Please before fill required info"))
-          } else if (!res.data.tgChatId) {
+          } else if (!res.data.tg) {
             dispatch(showHelpLineAction("Please connect with Telegram"))
           }
         })
@@ -99,7 +99,7 @@ export const Menu = () => {
   if (loading) return <Loader />
 
   return (
-    <div className={cn.menuWrapper} style={{ marginTop: helpShow && "80px" }}>
+    <div className={cn.menuWrapper} style={{ marginTop: helpShow && "100px" }}>
       <div className={cn.menuCreate}>
         <h2>{t?.menu.windowTitle}</h2>
         <form onSubmit={(e) => sendPos(e)}>

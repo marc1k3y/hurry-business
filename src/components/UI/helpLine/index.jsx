@@ -7,6 +7,7 @@ export const HelpLine = ({ children, visible }) => {
       style={{ display: visible ? "flex" : "none" }}>
       <div className={stls.icoBlock}>
         <img src={helpIco} alt="help-img" />
+        <div>Eva</div>
       </div>
       <div className={stls.messageBlock}>
         {children}
