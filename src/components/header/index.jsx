@@ -5,6 +5,7 @@ import langIco from "../../assets/lang.svg"
 import hurryLogo from "../../assets/hurry2.svg"
 import { privateLinks, publicLinks } from "../../links"
 import { setEnAction, setRuAction } from "../../store/translate/actions"
+import { hideHelpLineAction } from "../../store/helpLine/actions"
 
 export const Header = () => {
   const dispatch = useDispatch()

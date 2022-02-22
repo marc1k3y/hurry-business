@@ -2,21 +2,23 @@ import cn from "./style.module.css"
 import axios from "axios"
 import { nanoid } from "nanoid"
 import { Link } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 import deleteIco from "../../assets/delete.svg"
 import { host } from "../../constants"
 import { capFirst } from "../../utils/capFirst"
 import { HelpLine } from "../UI/helpLine"
 import { Loader } from "../UI/loader"
+import { showHelpLineAction } from "../../store/helpLine/actions"
 
 export const Menu = () => {
   console.log("render")
+  const dispatch = useDispatch()
   const bid = localStorage.getItem("bid")
   const { t } = useSelector(state => state.lang)
+  const { helpText, helpShow } = useSelector(state => state.helpLine)
   const [loading, setLoading] = useState(false)
   const [menuAction, setMenuAction] = useState(false)
-  const [infoFilled, setInfoFilled] = useState(true)
   const [currency, setCurrency] = useState("")
   const [option, setOption] = useState("ml")
   const [menu, setMenu] = useState([])
@@ -69,12 +71,17 @@ export const Menu = () => {
     async function getInfoStatus() {
       setLoading(true)
       await axios.get(`${host}bus/checkInfo?bid=${bid}`)
-        .then(() => setInfoFilled(true))
-        .catch(() => setInfoFilled(false))
+        .then((res) => {
+          if (!res.data.title || !res.data.addr) {
+            dispatch(showHelpLineAction("Please before fill required info"))
+          } else if (!res.data.tgChatId) {
+            dispatch(showHelpLineAction("Please connect with Telegram"))
+          }
+        })
         .finally(() => setLoading(false))
     }
     getInfoStatus()
-  }, [bid])
+  }, [bid, dispatch])
 
   useEffect(() => {
     async function getMenu() {
@@ -92,7 +99,7 @@ export const Menu = () => {
   if (loading) return <Loader />
 
   return (
-    <div className={cn.menuWrapper} style={{ marginTop: !infoFilled && "80px" }}>
+    <div className={cn.menuWrapper} style={{ marginTop: helpShow && "80px" }}>
       <div className={cn.menuCreate}>
         <h2>{t?.menu.windowTitle}</h2>
         <form onSubmit={(e) => sendPos(e)}>
@@ -126,7 +133,7 @@ export const Menu = () => {
             />
             <div>{currencySymbol(currency)}</div>
           </div>
-          <button disabled={!infoFilled}>{t?.menu.createBtn}</button>
+          <button disabled={helpShow}>{t?.menu.createBtn}</button>
         </form>
       </div>
       <div className={cn.menuPositions}>
@@ -141,8 +148,8 @@ export const Menu = () => {
 
           </div>)}
       </div>
-      <HelpLine visible={!infoFilled}>
-        Please before fill <Link to="/admin">info</Link>
+      <HelpLine visible={helpShow}>
+        {helpText} <Link to="/admin">here</Link>
       </HelpLine>
     </div>
   )

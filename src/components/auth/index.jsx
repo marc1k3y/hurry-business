@@ -10,18 +10,18 @@ import { host } from "../../constants"
 import { authSuccessAction } from "../../store/auth/actions"
 import { HelpLine } from "../UI/helpLine"
 import { Modal } from "../UI/modal"
+import { hideHelpLineAction, showHelpLineAction } from "../../store/helpLine/actions"
 
 export const Auth = () => {
   console.log("render")
   const dispatch = useDispatch()
   const { t } = useSelector(state => state.lang)
+  const { helpText, helpShow } = useSelector(state => state.helpLine)
   const [isLogin, setIsLogin] = useState(true)
   const [login, setLogin] = useState("")
   const [password, setPassword] = useState("")
   const [passType, setPassType] = useState(true)
   const [policy, setPolicy] = useState(false)
-  const [helpLine, setHelpLine] = useState(false)
-  const [textHelpLine, setTextHelpLine] = useState(null)
   const [modal, setModal] = useState(false)
   const [textModal, setTextModal] = useState(null)
 
@@ -34,10 +34,9 @@ export const Auth = () => {
         }
       })
       .catch(() => {
-        setTextHelpLine("Please try again")
-        setHelpLine(true)
+        dispatch(showHelpLineAction("Please try again"))
         setTimeout(() => {
-          setHelpLine(false)
+          dispatch(hideHelpLineAction())
         }, 3000)
       })
   }
@@ -51,10 +50,9 @@ export const Auth = () => {
         }
       })
       .catch(() => {
-        setTextHelpLine("Login already exist")
-        setHelpLine(true)
+        dispatch(showHelpLineAction("Login already exist"))
         setTimeout(() => {
-          setHelpLine(false)
+          dispatch(hideHelpLineAction())
         }, 3000)
       })
   }
@@ -116,7 +114,9 @@ export const Auth = () => {
 
         </div>
       </form>
-      <HelpLine visible={helpLine}>{textHelpLine}</HelpLine>
+      <HelpLine visible={helpShow}>
+        {helpText}
+      </HelpLine>
       <Modal visible={modal} onClose={setModal} header={t?.auth.privacyPlc}>
         {textModal}
       </Modal>

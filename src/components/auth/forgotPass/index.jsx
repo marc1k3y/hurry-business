@@ -1,17 +1,27 @@
 import cn from "./style.module.css"
 import axios from "axios"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useState } from "react"
 import { host } from "../../../constants"
+import { hideHelpLineAction, showHelpLineAction } from "../../../store/helpLine/actions"
+import { HelpLine } from "../../UI/helpLine"
 
 export const ForgotPass = () => {
+  const dispatch = useDispatch()
   const { t } = useSelector(state => state.lang)
+  const { helpText, helpShow } = useSelector(state => state.helpLine)
   const [login, setLogin] = useState("")
 
   async function recoveryPass(e) {
     e.preventDefault()
     login.length && await axios.put(`${host}bus/forgotPass`, { login })
       .then((res) => console.log(res))
+      .catch(() => {
+        dispatch(showHelpLineAction("Please try again"))
+        setTimeout(() => {
+          dispatch(hideHelpLineAction())
+        }, 3000)
+      })
   }
 
   return (
@@ -30,6 +40,9 @@ export const ForgotPass = () => {
           </div>
         </form>
       </div>
+      <HelpLine visible={helpShow}>
+        {helpText}
+      </HelpLine>
     </div>
   )
 }
