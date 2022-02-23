@@ -45,6 +45,23 @@ const en = {
     newPassPlc: "new password",
     repPassPlc: "repeat password",
     changeBtn: "change"
+  },
+  helpLine: {
+    tgConnect: "Please connect with Telegram Bot",
+    fillInfo: "Please fill information, secret word isn't required",
+    tryAgain: "Please try again",
+    loginExist: "Login already exist",
+
+  },
+  successLine: {
+    passChanged: "Password changed",
+    infoSaved: "Info saved"
+  },
+  footer: {
+    bca: "buy coffee author"
+  },
+  links: {
+    here: "here"
   }
 }
 
@@ -93,6 +110,22 @@ const ru = {
     newPassPlc: "новый пароль",
     repPassPlc: "повторить пароль",
     changeBtn: "сменить"
+  },
+  helpLine: {
+    tgConnect: "Пожалуйста свяжите аккаунт с Телеграм Ботом",
+    fillInfo: "Пожалуйста заполните информацию, серкетное слово не обязательно",
+    tryAgain: "Пожалуйста попробуйте ещё раз",
+    loginExist: "Такой логин уже используется",
+  },
+  successLine: {
+    passChanged: "Пароль изменён",
+    infoSaved: "Информация сохранена"
+  },
+  footer: {
+    bca: "купить кофе автору"
+  },
+  links: {
+    here: "здесь"
   }
 }
 

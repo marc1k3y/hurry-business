@@ -73,15 +73,15 @@ export const Menu = () => {
       await axios.get(`${host}bus/checkInfo?bid=${bid}`)
         .then((res) => {
           if (!res.data.title || !res.data.addr) {
-            dispatch(showHelpLineAction("Please before fill required info"))
+            dispatch(showHelpLineAction(t?.helpLine.fillInfo))
           } else if (!res.data.tg) {
-            dispatch(showHelpLineAction("Please connect with Telegram"))
+            dispatch(showHelpLineAction(t?.helpLine.tgConnect))
           }
         })
         .finally(() => setLoading(false))
     }
     getInfoStatus()
-  }, [bid, dispatch])
+  }, [bid, dispatch, t])
 
   useEffect(() => {
     async function getMenu() {
@@ -149,7 +149,7 @@ export const Menu = () => {
           </div>)}
       </div>
       <HelpLine visible={helpShow}>
-        {helpText} <Link to="/admin">here</Link>
+        {helpText} <Link to="/admin">{t?.links.here}</Link>
       </HelpLine>
     </div>
   )

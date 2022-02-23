@@ -39,7 +39,7 @@ export const Admin = () => {
     newPass === repeatPass &&
       await axios.put(`${host}bus/changePass`, { bid, newPass })
         .then(() => {
-          dispatch(showSuccessLineAction("Password changed"))
+          dispatch(showSuccessLineAction(t?.successLine.passChanged))
           setTimeout(() => {
             dispatch(hideSuccessLineAction())
           }, 4000)
@@ -74,11 +74,11 @@ export const Admin = () => {
       }
     })
       .then(() => {
-        dispatch(showSuccessLineAction("Info saved"))
+        dispatch(showSuccessLineAction(t?.successLine.infoSaved))
         setTimeout(() => {
           dispatch(hideSuccessLineAction())
         }, 3000)
-        chatId ? dispatch(hideHelpLineAction()) : dispatch(showHelpLineAction("Please reg in Telegram Bot"))
+        chatId ? dispatch(hideHelpLineAction()) : dispatch(showHelpLineAction(t?.helpLine.tgConnect))
       })
       .finally(() => {
         setLoading(false)
@@ -92,7 +92,7 @@ export const Admin = () => {
         .then((res) => {
           setRate(res.data.rate)
           if (!res.data.tgChatId) {
-            dispatch(showHelpLineAction("Please connect with Telegram Bot"))
+            dispatch(showHelpLineAction(t?.helpLine.tgConnect))
           } else {
             setChatId(res.data.tgChatId)
           }
@@ -100,7 +100,7 @@ export const Admin = () => {
             setTitle(res.data.info.title)
             setCurrency(res.data.info.currency)
           } else {
-            dispatch(showHelpLineAction("Please fill information, secret word isn't required"))
+            dispatch(showHelpLineAction(t?.helpLine.fillInfo))
           }
           if (res.data.info?.addr) {
             setCountry(res.data.info.addr.country)
@@ -113,7 +113,7 @@ export const Admin = () => {
         .finally(() => setLoading(false))
     }
     getInfo()
-  }, [bid, dispatch])
+  }, [bid, dispatch, t])
 
   useEffect(() => {
     connId && axios.put(`${host}bus/connect?bid=${bid}`, { connId })
@@ -184,7 +184,7 @@ export const Admin = () => {
               type="text"
               value={sw}
               onChange={(e) => setSw(e.target.value)}
-              placeholder="jopa" />
+              placeholder="dude" />
           </div>
         </div>
         <button>{t?.admin.saveBtn}</button>

@@ -34,7 +34,7 @@ export const Auth = () => {
         }
       })
       .catch(() => {
-        dispatch(showHelpLineAction("Please try again"))
+        dispatch(showHelpLineAction(t?.helpLine.tryAgain))
         setTimeout(() => {
           dispatch(hideHelpLineAction())
         }, 3000)
@@ -50,7 +50,7 @@ export const Auth = () => {
         }
       })
       .catch(() => {
-        dispatch(showHelpLineAction("Login already exist"))
+        dispatch(showHelpLineAction(t?.helpLine.loginExist))
         setTimeout(() => {
           dispatch(hideHelpLineAction())
         }, 3000)
