@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/hurry-business/static/css/main.893289a7.css",
+    "main.css": "/hurry-business/static/css/main.60cf548c.css",
     "main.js": "/hurry-business/static/js/main.370ab6a8.js",
     "static/media/success.svg": "/hurry-business/static/media/success.6e2e884cc4af23c9f8eb28e43c050bcc.svg",
     "static/media/help.svg": "/hurry-business/static/media/help.80b6819aa288f29991543c541b32a8f9.svg",
@@ -16,11 +16,11 @@
     "static/media/lang.svg": "/hurry-business/static/media/lang.b5078497f9a7c5191b4cf10ad2c15752.svg",
     "index.html": "/hurry-business/index.html",
     "static/media/loader.svg": "/hurry-business/static/media/loader.35eafb302b0c021a7927e0fedf5ba2b5.svg",
-    "main.893289a7.css.map": "/hurry-business/static/css/main.893289a7.css.map",
+    "main.60cf548c.css.map": "/hurry-business/static/css/main.60cf548c.css.map",
     "main.370ab6a8.js.map": "/hurry-business/static/js/main.370ab6a8.js.map"
   },
   "entrypoints": [
-    "static/css/main.893289a7.css",
+    "static/css/main.60cf548c.css",
     "static/js/main.370ab6a8.js"
   ]
 }
