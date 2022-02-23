@@ -113,7 +113,7 @@ export const Admin = () => {
         .finally(() => setLoading(false))
     }
     getInfo()
-  }, [bid, dispatch, t])
+  }, [bid, dispatch, helpShow && t])
 
   useEffect(() => {
     connId && axios.put(`${host}bus/connect?bid=${bid}`, { connId })

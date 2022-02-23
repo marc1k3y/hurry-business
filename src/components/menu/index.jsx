@@ -81,7 +81,7 @@ export const Menu = () => {
         .finally(() => setLoading(false))
     }
     getInfoStatus()
-  }, [bid, dispatch, t])
+  }, [bid, dispatch, helpShow && t])
 
   useEffect(() => {
     async function getMenu() {

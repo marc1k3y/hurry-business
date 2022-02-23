@@ -24,7 +24,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: goldenrod;
+  border: 2px solid goldenrod;
+  box-shadow: 2px 2px 5px goldenrod;
   padding: 5px;
   border-radius: 10px;
 }

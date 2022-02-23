@@ -15,7 +15,6 @@ export const ForgotPass = () => {
   async function recoveryPass(e) {
     e.preventDefault()
     login.length && await axios.put(`${host}bus/forgotPass`, { login })
-      .then((res) => console.log(res))
       .catch(() => {
         dispatch(showHelpLineAction(t?.helpLine.tryAgain))
         setTimeout(() => {
