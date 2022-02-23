@@ -47,11 +47,11 @@ const en = {
     changeBtn: "change"
   },
   helpLine: {
+    helperName: "Eva",
     tgConnect: "Please connect with Telegram Bot",
     fillInfo: "Please fill information, secret word isn't required",
     tryAgain: "Please try again",
-    loginExist: "Login already exist",
-
+    loginExist: "Login already exist"
   },
   successLine: {
     passChanged: "Password changed",
@@ -112,10 +112,11 @@ const ru = {
     changeBtn: "сменить"
   },
   helpLine: {
+    helperName: "Ева",
     tgConnect: "Пожалуйста свяжите аккаунт с Телеграм Ботом",
     fillInfo: "Пожалуйста заполните информацию, серкетное слово не обязательно",
     tryAgain: "Пожалуйста попробуйте ещё раз",
-    loginExist: "Такой логин уже используется",
+    loginExist: "Такой логин уже используется"
   },
   successLine: {
     passChanged: "Пароль изменён",
