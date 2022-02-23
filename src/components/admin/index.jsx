@@ -198,7 +198,7 @@ export const Admin = () => {
           </CopyToClipboard>
           : t?.admin.genText}
         {!connId &&
-          <button onClick={genConnId}>{t?.admin.genBtn}</button>}
+          <button onClick={genConnId} className={!chatId && cn.flashingConnBtn}>{t?.admin.genBtn}</button>}
       </div>
       {chatId && <div className={cn.changePass}>
         <div>{t?.admin.changePass}</div>
