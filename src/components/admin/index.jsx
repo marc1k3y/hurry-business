@@ -23,7 +23,6 @@ export const Admin = () => {
   const [chatId, setChatId] = useState(null)
   const [newPass, setNewPass] = useState("")
   const [repeatPass, setRepeatPass] = useState("")
-  const [isCopied, setIsCopied] = useState(false)
   const [connId, setConnId] = useState(null)
   const [rate, setRate] = useState(null)
   const [currency, setCurrency] = useState("eur")
@@ -191,10 +190,8 @@ export const Admin = () => {
       </form>
       <div className={cn.connId}>
         {connId ?
-          <CopyToClipboard text={`/register ${connId}`} onCopy={() => setIsCopied(true)}>
-            {isCopied
-              ? <span className={cn.coppied}>{t?.admin.copiedText}<a href="https://t.me/hurry_orders_bot">{t?.admin.botLink}</a></span>
-              : <span className={cn.forCopy}>{connId}</span>}
+          <CopyToClipboard text={`/register ${connId}`}>
+            <span className={cn.coppied}>{t?.admin.copiedText}<a href="https://t.me/hurry_orders_bot">{t?.admin.botLink}</a></span>
           </CopyToClipboard>
           : t?.admin.genText}
         {!connId &&
