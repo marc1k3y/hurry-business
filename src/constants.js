@@ -1,1 +1,1 @@
-export const host = "https://hurry-network.herokuapp.com/api/"
+export const host = "https://hurry-server.onrender.com/api/"
